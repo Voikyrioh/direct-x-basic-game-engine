@@ -8,7 +8,7 @@
 
 namespace dx3d
 {
-    struct graphics_resource_desc
+    struct graphicsResourceDesc
     {
         BaseDesc base;
         std::shared_ptr<const GraphicsDevice> graphics_device;
@@ -19,7 +19,7 @@ namespace dx3d
     class GraphicsResource : public Base
     {
     public:
-        explicit GraphicsResource(const graphics_resource_desc& desc):
+        explicit GraphicsResource(const graphicsResourceDesc& desc):
             Base(desc.base),
             m_graphics_device_(desc.graphics_device),
             m_device_(desc.device),

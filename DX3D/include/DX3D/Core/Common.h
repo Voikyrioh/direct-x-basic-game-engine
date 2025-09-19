@@ -57,6 +57,18 @@ namespace dx3d
         ShaderType shader_type{};
     };
 
+    struct ShaderBinaryData
+    {
+        const void* data{};
+        size_t size{};
+    };
+
+    struct GraphicsPipelineStateDesc
+    {
+        const ShaderBinary& vertex_shader;
+        const ShaderBinary& pixel_shader;
+    };
+
     struct GameDesc
     {
         Rect window_size{ 1280, 720 };

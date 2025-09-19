@@ -26,9 +26,9 @@ dx3d::GraphicsEngine::GraphicsEngine(const GraphicsEngineDesc& desc): Base(desc.
     constexpr auto shaderSourceCodeSize = std::size(shaderSourceCode);
     
     auto vs = device.compileShader({shaderSourceName, shaderSourceCode, shaderSourceCodeSize, "VSMain", ShaderType::Vertex});
-    auto ps = device.compileShader({shaderSourceName, shaderSourceCode, shaderSourceCodeSize, "PSMain", ShaderType::Vertex});
+    auto ps = device.compileShader({shaderSourceName, shaderSourceCode, shaderSourceCodeSize, "PSMain", ShaderType::Pixel});
 
-    
+    m_pipeline_ = device.createGraphicsPipelineState({*vs, *ps});
 }
 
 dx3d::GraphicsEngine::~GraphicsEngine()
@@ -44,6 +44,7 @@ void dx3d::GraphicsEngine::render(SwapChain& swap_chain)
 {
     auto& context = *m_device_context_;
     context.clearAndSetBackBuffer(swap_chain, { 0.4f,0.3f,0.8f,1 });
+    context.setGraphicsPipelineState(*m_pipeline_);
     
     auto& device = *m_graphics_device_;
     device.executeCommandList(context);

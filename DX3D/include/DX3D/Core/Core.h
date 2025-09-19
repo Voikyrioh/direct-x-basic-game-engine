@@ -11,6 +11,7 @@ namespace dx3d
     class Game;
     class GraphicsDevice;
     class GraphicsEngine;
+    class GraphicsPipelineState;
     class Logger;
     class ShaderBinary;
     class SwapChain;
@@ -24,4 +25,5 @@ namespace dx3d
     using SwapChainPtr = std::shared_ptr<SwapChain>;
     using DeviceContextPtr = std::shared_ptr<DeviceContext>;
     using ShaderBinaryPtr = std::shared_ptr<ShaderBinary>;
+    using GraphicsPipelineStatePtr = std::shared_ptr<GraphicsPipelineState>;
 }

@@ -16,9 +16,10 @@ namespace dx3d
         SwapChainPtr createSwapChain(const SwapChainDesc& desc);
         DeviceContextPtr createDeviceContext();
         ShaderBinaryPtr compileShader(const ShaderCompileDesc& desc);
+        GraphicsPipelineStatePtr createGraphicsPipelineState(const GraphicsPipelineStateDesc& desc);
         void executeCommandList(DeviceContext& context);
     private:
-        graphics_resource_desc getGraphicResourceDesc() const noexcept;
+        graphicsResourceDesc getGraphicResourceDesc() const noexcept;
         
     private:
         Microsoft::WRL::ComPtr<ID3D11Device> m_d3d_device_{};

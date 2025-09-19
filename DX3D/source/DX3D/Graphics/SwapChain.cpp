@@ -1,6 +1,6 @@
 #include <DX3D/Graphics/SwapChain.h>
 
-dx3d::SwapChain::SwapChain(const SwapChainDesc& desc, const graphics_resource_desc& gdesc) :
+dx3d::SwapChain::SwapChain(const SwapChainDesc& desc, const graphicsResourceDesc& gdesc) :
 GraphicsResource(gdesc)
 {
     if (!desc.win_handle) DX3DLogThrowInvalidArg("No window handle provided")
