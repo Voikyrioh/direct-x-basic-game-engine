@@ -12,6 +12,7 @@ namespace dx3d
     class GraphicsDevice;
     class GraphicsEngine;
     class Logger;
+    class ShaderBinary;
     class SwapChain;
     class Window;
 
@@ -22,4 +23,5 @@ namespace dx3d
 
     using SwapChainPtr = std::shared_ptr<SwapChain>;
     using DeviceContextPtr = std::shared_ptr<DeviceContext>;
+    using ShaderBinaryPtr = std::shared_ptr<ShaderBinary>;
 }

@@ -15,7 +15,7 @@ namespace dx3d
 
         SwapChainPtr createSwapChain(const SwapChainDesc& desc);
         DeviceContextPtr createDeviceContext();
-
+        ShaderBinaryPtr compileShader(const ShaderCompileDesc& desc);
         void executeCommandList(DeviceContext& context);
     private:
         graphics_resource_desc getGraphicResourceDesc() const noexcept;

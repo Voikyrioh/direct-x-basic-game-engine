@@ -11,12 +11,12 @@ dx3d::Game::Game(const GameDesc& desc):
     m_graphics_engine_ = std::make_unique<GraphicsEngine>(GraphicsEngineDesc{m_logger_});
     m_display_ = std::make_unique<Display>(DisplayDesc{ {m_logger_,desc.window_size},m_graphics_engine_->getGraphicsDevice()});
 
-    DX3LogInfo("Game initialized.")
+    DX3DLogInfo("Game initialized.")
 }
 
 dx3d::Game::~Game()
 {
-    DX3LogInfo("Game is shutting down.")   
+    DX3DLogInfo("Game is shutting down.")   
 }
 
 void dx3d::Game::onInternalUpdate()

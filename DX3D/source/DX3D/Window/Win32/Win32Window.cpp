@@ -32,7 +32,7 @@ dx3d::Window::Window(const WindowDesc& desc): Base(desc.base), m_size_(desc.size
     
     static const auto window_class_id = std::invoke(register_window_class_function);
     
-    if (!window_class_id) DX3DLogErrorAndThrow("Window class registration failed!")
+    if (!window_class_id) DX3DLogThrowError("Window class registration failed!")
     
     
     RECT rc{0,0,m_size_.width,m_size_.height};
@@ -43,7 +43,7 @@ dx3d::Window::Window(const WindowDesc& desc): Base(desc.base), m_size_(desc.size
         rc.right - rc.left, rc.bottom - rc.top,
         NULL, NULL, NULL, NULL);
 
-    if (!m_handle_) DX3DLogErrorAndThrow("Window creation failed!")
+    if (!m_handle_) DX3DLogThrowError("Window creation failed!")
 
     ShowWindow(static_cast<HWND>(m_handle_), SW_SHOW);
 }

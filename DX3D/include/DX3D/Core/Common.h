@@ -38,6 +38,25 @@ namespace dx3d
         Rect win_size{};
     };
 
+    enum class ShaderType
+    {
+        Vertex = 0,
+        Pixel,
+        Geometry,
+        Hull,
+        Domain,
+        Compute,
+    };
+
+    struct ShaderCompileDesc
+    {
+        const char* shader_source_name{};
+        const void* shader_source_code{};
+        size_t shader_source_code_size{};
+        const char* shader_entry_point{};
+        ShaderType shader_type{};
+    };
+
     struct GameDesc
     {
         Rect window_size{ 1280, 720 };
