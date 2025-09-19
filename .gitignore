@@ -1,0 +1,10 @@
+#project files
+/.idea/
+/.vs/
+
+#Build
+/Intermediate/
+/Bin/
+
+#Debug
+DirectXGame/x64/
