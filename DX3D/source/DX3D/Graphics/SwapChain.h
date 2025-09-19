@@ -1,12 +1,12 @@
 #pragma once
-#include <DX3D/Graphics/GraphicsRessource.h>
+#include <DX3D/Graphics/GraphicsResource.h>
 
 namespace dx3d
 {
-    class SwapChain final: public GraphicsRessource
+    class SwapChain final: public GraphicsResource
     {
     public:
-        SwapChain(const SwapChainDesc& desc, const graphics_ressource_desc& gdesc);
+        SwapChain(const SwapChainDesc& desc, const graphics_resource_desc& gdesc);
         
         void present(bool vsync = false);
     private:

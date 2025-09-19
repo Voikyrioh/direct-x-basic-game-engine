@@ -1,5 +1,5 @@
 #pragma once
-#include "DX3D/Graphics/GraphicsRessource.h"
+#include "DX3D/Graphics/GraphicsResource.h"
 #include "DX3D/Core/Common.h"
 #include "DX3D/Core/Base.h"
 #include "d3d11.h"
@@ -18,7 +18,7 @@ namespace dx3d
 
         void executeCommandList(DeviceContext& context);
     private:
-        graphics_ressource_desc getGraphicRessourceDesc() const noexcept;
+        graphics_resource_desc getGraphicResourceDesc() const noexcept;
         
     private:
         Microsoft::WRL::ComPtr<ID3D11Device> m_d3d_device_{};

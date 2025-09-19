@@ -1,7 +1,7 @@
 #include <DX3D/Graphics/SwapChain.h>
 
-dx3d::SwapChain::SwapChain(const SwapChainDesc& desc, const graphics_ressource_desc& gdesc) :
-GraphicsRessource(gdesc)
+dx3d::SwapChain::SwapChain(const SwapChainDesc& desc, const graphics_resource_desc& gdesc) :
+GraphicsResource(gdesc)
 {
     DXGI_SWAP_CHAIN_DESC dxgiDesc{};
 

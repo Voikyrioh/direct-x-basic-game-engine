@@ -37,12 +37,12 @@ GraphicsDevice::~GraphicsDevice()
 
 SwapChainPtr GraphicsDevice::createSwapChain(const SwapChainDesc& desc)
 {
-    return std::make_shared<SwapChain>(desc, getGraphicRessourceDesc());
+    return std::make_shared<SwapChain>(desc, getGraphicResourceDesc());
 }
 
 DeviceContextPtr GraphicsDevice::createDeviceContext()
 {
-    return std::make_shared<DeviceContext>(getGraphicRessourceDesc());
+    return std::make_shared<DeviceContext>(getGraphicResourceDesc());
 }
 
 void GraphicsDevice::executeCommandList(DeviceContext& context)
@@ -53,7 +53,7 @@ void GraphicsDevice::executeCommandList(DeviceContext& context)
     m_d3d_context_->ExecuteCommandList(list.Get(), false);
 }
 
-graphics_ressource_desc GraphicsDevice::getGraphicRessourceDesc() const noexcept
+graphics_resource_desc GraphicsDevice::getGraphicResourceDesc() const noexcept
 {
     return  {{m_logger_}, shared_from_this(), *m_d3d_device_.Get(), *m_dxgi_factory_.Get() };
 }

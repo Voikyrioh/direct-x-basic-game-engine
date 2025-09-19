@@ -2,7 +2,7 @@
 #include <DX3D/Graphics/DeviceContext.h>
 #include <DX3D/Graphics/SwapChain.h>
 
-dx3d::DeviceContext::DeviceContext(const graphics_ressource_desc& gdesc): GraphicsRessource(gdesc)
+dx3d::DeviceContext::DeviceContext(const graphics_resource_desc& gdesc): GraphicsResource(gdesc)
 {
     DX_3D_GRAPHICS_ON_FAIL_THROW(m_device_.CreateDeferredContext(0, &m_context_),
         "CreateDeferredContext failed.")

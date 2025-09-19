@@ -3,10 +3,10 @@
 
 namespace dx3d
 {
-    #define DX_3D_GRAPHICS_ON_FAIL_THROW(hr, errorMessage)\
-        {\
-            auto res = (hr);\
-            if (FAILED(hr))\
-                DX3DLogErrorAndThrow(errorMessage);\
-        }
+    #define DX_3D_GRAPHICS_ON_FAIL_THROW(hr, message)\
+    {\
+        auto res = (hr);\
+        if (FAILED(res))\
+            DX3DLogErrorAndThrow(message);\
+    }
 }

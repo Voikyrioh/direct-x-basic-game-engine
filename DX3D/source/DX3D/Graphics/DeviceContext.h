@@ -1,13 +1,13 @@
 #pragma once
-#include <DX3D/Graphics/GraphicsRessource.h>
+#include <DX3D/Graphics/GraphicsResource.h>
 #include <DX3D/Math/Vec4.h>
 
 namespace dx3d
 {
-    class DeviceContext final: public GraphicsRessource
+    class DeviceContext final: public GraphicsResource
     {
     public:
-        explicit DeviceContext(const graphics_ressource_desc& gdesc);
+        explicit DeviceContext(const graphics_resource_desc& gdesc);
         void clearAndSetBackBuffer(const SwapChain& swap_chain, const Vec4& color);
 
     private:

@@ -11,7 +11,6 @@ dx3d::GraphicsEngine::GraphicsEngine(const GraphicsEngineDesc& desc): Base(desc.
 
     auto& device = *m_graphics_device_;
     m_device_context_ = device.createDeviceContext();
-    
 }
 
 dx3d::GraphicsEngine::~GraphicsEngine()
@@ -26,8 +25,7 @@ dx3d::GraphicsDevice& dx3d::GraphicsEngine::getGraphicsDevice() noexcept
 void dx3d::GraphicsEngine::render(SwapChain& swap_chain)
 {
     auto& context = *m_device_context_;
-    context.clearAndSetBackBuffer(swap_chain, { 1,0,0,1 });
-
+    context.clearAndSetBackBuffer(swap_chain, { 0.4,0.3,0.8,1 });
     
     auto& device = *m_graphics_device_;
     device.executeCommandList(context);
