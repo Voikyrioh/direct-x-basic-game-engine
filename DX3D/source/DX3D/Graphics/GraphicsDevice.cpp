@@ -4,6 +4,8 @@
 #include <DX3D/Graphics/GraphicsPipelineState.h>
 #include <DX3D/Graphics/ShaderBinary.h>
 #include <DX3D/Graphics/SwapChain.h>
+#include <DX3D/Graphics/VertexBuffer.h>
+#include <DX3D/Graphics/VertexShaderSignature.h>
 
 using namespace dx3d;
 
@@ -57,6 +59,16 @@ GraphicsPipelineStatePtr GraphicsDevice::createGraphicsPipelineState(const Graph
     return std::make_shared<GraphicsPipelineState>(desc, getGraphicResourceDesc());
 }
 
+VertexBufferPtr GraphicsDevice::createVertexBuffer(const VertexBufferDesc& desc)
+{
+    return std::make_shared<VertexBuffer>(desc, getGraphicResourceDesc());
+}
+
+VertexShaderSignaturePtr GraphicsDevice::createVertexShaderSignature(const VertexShaderSignatureDesc& desc)
+{
+    return std::make_shared<VertexShaderSignature>(desc, getGraphicResourceDesc());
+}
+
 void GraphicsDevice::executeCommandList(DeviceContext& context)
 {
     Microsoft::WRL::ComPtr<ID3D11CommandList> list{};
@@ -65,7 +77,7 @@ void GraphicsDevice::executeCommandList(DeviceContext& context)
     m_d3d_context_->ExecuteCommandList(list.Get(), false);
 }
 
-graphicsResourceDesc GraphicsDevice::getGraphicResourceDesc() const noexcept
+GraphicsResourceDesc GraphicsDevice::getGraphicResourceDesc() const noexcept
 {
     return  {{m_logger_}, shared_from_this(), *m_d3d_device_.Get(), *m_dxgi_factory_.Get() };
 }

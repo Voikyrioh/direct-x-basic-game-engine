@@ -6,8 +6,8 @@ namespace dx3d
     class ShaderBinary final: public GraphicsResource
     {
     public:
-        ShaderBinary(const ShaderCompileDesc& desc, const graphicsResourceDesc& gdesc);
-        ShaderBinaryData getData() const noexcept;
+        ShaderBinary(const ShaderCompileDesc& desc, const GraphicsResourceDesc& gdesc);
+        BinaryData getData() const noexcept;
         ShaderType getType() const noexcept;
 
     private:

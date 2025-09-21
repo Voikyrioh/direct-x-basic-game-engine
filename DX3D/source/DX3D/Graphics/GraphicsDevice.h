@@ -17,9 +17,12 @@ namespace dx3d
         DeviceContextPtr createDeviceContext();
         ShaderBinaryPtr compileShader(const ShaderCompileDesc& desc);
         GraphicsPipelineStatePtr createGraphicsPipelineState(const GraphicsPipelineStateDesc& desc);
+        VertexBufferPtr createVertexBuffer(const VertexBufferDesc& desc);
+        VertexShaderSignaturePtr createVertexShaderSignature(const VertexShaderSignatureDesc& desc);
+        
         void executeCommandList(DeviceContext& context);
     private:
-        graphicsResourceDesc getGraphicResourceDesc() const noexcept;
+        GraphicsResourceDesc getGraphicResourceDesc() const noexcept;
         
     private:
         Microsoft::WRL::ComPtr<ID3D11Device> m_d3d_device_{};
